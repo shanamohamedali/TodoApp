@@ -13,7 +13,8 @@ export function ToDo() {
   const handleChange = (e) => {
     setTodoItem(e.target.value);
   };
-  const addTodoItem = () => {
+  const addTodoItem = (e) => {
+    e.preventDefault();
     if (todoItem) {
       setTodoList((prev) => [
         ...prev,
@@ -40,6 +41,9 @@ export function ToDo() {
           name="toDoInput"
           type="text"
           placeholder="Add Todo Item.."
+          onKeyDown={(e) => {
+            if (e.key === "Enter") addTodoItem(e);
+          }}
         />
         <TodoButton onClick={addTodoItem} label="ADD TODO" />
       </div>
