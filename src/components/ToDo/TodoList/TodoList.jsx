@@ -5,7 +5,7 @@ import { FaTrash } from "react-icons/fa";
 import { TodoEdit } from "../TodoEdit/TodoEdit";
 
 export function TodoList({ todoList, setTodoList }) {
-  const [editItem, setEditItem] = useState([]);
+  const [editItem, setEditItem] = useState("");
 
 const handleCompleteToggle=(id)=>{
  setTodoList(todoList.map((item)=>{
@@ -25,8 +25,8 @@ const handleCompleteToggle=(id)=>{
   //setTodoList(newList)
 
   }
-const editTodoItem = async (id) => {
-    await setEditItem(todoList.filter((data) => data.id === id));
+const editTodoItem = (id) => {
+    setEditItem(todoList.filter((data) => data.id === id));
   };
   console.log("..edititem", editItem);
 
@@ -47,7 +47,7 @@ const editTodoItem = async (id) => {
               
             </li>
             <button
-              style={{ paddingRight: "30px" }}
+              style={{ paddingRight: "40px"}}
               onClick={() => editTodoItem(item.id)}
             >
               <FaPen />

@@ -2,13 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:  "open-sans","Helvetica Neue","sans-serif";;
+    font-family:  "Roboto";
 }
 body{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+   background-color:#152431;
     color: white;
 }
 #root{
@@ -17,7 +18,8 @@ body{
     align-items: center;
     width: 100%;
     min-height: 100vh;
-    color:white;
+    color:#8FA8C1;
+    line-height:16.41px;
 }
 
 button{

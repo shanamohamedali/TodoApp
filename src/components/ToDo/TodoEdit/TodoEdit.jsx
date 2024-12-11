@@ -5,39 +5,29 @@ import "./TodoEdit.css";
 
 export function TodoEdit({ todoList,setTodoList,editItem, setEditItem }) {
 
-  const[editedItem,setEditedItem]=useState("")
-  //console.log("...dgasf",editItem.title)
+  const[editedItem,setEditedItem]=useState(" ")
+  console.log("...dgasf",editItem[0].title)
 
   const handleChange = (e) => {
     setEditedItem(e.target.value);
   };
   const onClickSave=(id,text)=>{
-    setTodoList(todoList.map((item)=>{
-      if(item.id===id){
-        [...item,
-          title=text]
-      }
-    }))
-
-
   }
 
   return (
     <>
-      {editItem.map((item) => (
-        <div className="todoedit-container"  key={item.id}>
+        <div className="todoedit-container">
           <TodoInput
             onChange={handleChange}
-            value={item.title}
+            value={editItem[0].title}
             name="todoEdit"
             type="text"
             placeholder="Edit Todo Item.."
         
           />
-          <TodoButton onClick={()=>onClickSave(item.id,e.target.value)} label="SAVE" />
+          <TodoButton onClick={()=>onClickSave(editItem[0].id,e.target.value)} label="SAVE" />
           <TodoButton onClickCancel="" label="CANCEL" />
         </div>
-      ))}
     </>
   );
 }
