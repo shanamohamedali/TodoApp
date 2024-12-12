@@ -1,7 +1,7 @@
 .todoedit-container{
     display: flex;
-    
     padding: 20px 30px 20px 30px;
     border-bottom: 1px dashed #8FA8C14D;
+    margin: 0px 10px;
     
 }

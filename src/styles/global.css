@@ -26,3 +26,9 @@ button{
     border: none;
     border-radius: 5px;
 }
+.error{
+    color: red;
+    font-size: 12px;
+    justify-content: start;
+    text-align: start;
+}

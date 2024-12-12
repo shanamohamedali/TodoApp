@@ -6,15 +6,19 @@ import { TodoList } from "./TodoList/TodoList";
 import { TodoEdit } from "./TodoEdit/TodoEdit";
 let todoId = 0;
 
+
+
 export function ToDo() {
   const [todoItem, setTodoItem] = useState("");
   const [todoList, setTodoList] = useState([]);
-
+  const [error,setError]=useState("")
+  
   const handleChange = (e) => {
     setTodoItem(e.target.value);
   };
   const addTodoItem = (e) => {
     e.preventDefault();
+    
     if (todoItem) {
       setTodoList((prev) => [
         ...prev,
@@ -24,6 +28,11 @@ export function ToDo() {
           completed: false,
         },
       ]);
+      setError("")
+    } else{
+      setError(
+        "* Input field is required,enter your task"
+      )
     }
     setTodoItem("");
   };
@@ -38,7 +47,7 @@ export function ToDo() {
         <TodoInput
           onChange={handleChange}
           value={todoItem}
-          name="toDoInput"
+          name="add-Input"
           type="text"
           placeholder="Add Todo Item.."
           onKeyDown={(e) => {
@@ -47,6 +56,7 @@ export function ToDo() {
         />
         <TodoButton onClick={addTodoItem} label="ADD TODO" />
       </div>
+      {error && (<p className="error">{error}</p>)}
       {todoList.length > 0 && (
         <div className="todo-input-section">
           <TodoList todoList={todoList} setTodoList={setTodoList} />

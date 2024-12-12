@@ -5,13 +5,34 @@ import "./TodoEdit.css";
 
 export function TodoEdit({ todoList,setTodoList,editItem, setEditItem }) {
 
-  const[editedItem,setEditedItem]=useState(" ")
-  console.log("...dgasf",editItem[0].title)
+  //const[editedItem,setEditedItem]=useState(" ")
+  //const{id,title,completed}=editItem;
+  console.log("...dgasf",editItem.title)
+  const [error,setError]=useState("")
 
   const handleChange = (e) => {
-    setEditedItem(e.target.value);
+    setEditItem({...editItem,
+      title:e.target.value,
+    });
+
   };
-  const onClickSave=(id,text)=>{
+  const handleChangeSave=(e)=>{
+    e.preventDefault();
+    if(editItem.title !== ""){
+      setTodoList(todoList.map((item)=>{
+        if(item.id===editItem.id){
+          return{
+            ...item,
+            title:editItem.title
+          }
+          return item
+        }
+      }))
+      setEditItem("")
+     
+    }else{
+      setError("Input is required, enter the edited task")
+    }
   }
 
   return (
@@ -19,15 +40,16 @@ export function TodoEdit({ todoList,setTodoList,editItem, setEditItem }) {
         <div className="todoedit-container">
           <TodoInput
             onChange={handleChange}
-            value={editItem[0].title}
-            name="todoEdit"
+            value={editItem.title}
+            name="edit-input"
             type="text"
             placeholder="Edit Todo Item.."
         
           />
-          <TodoButton onClick={()=>onClickSave(editItem[0].id,e.target.value)} label="SAVE" />
-          <TodoButton onClickCancel="" label="CANCEL" />
+          <TodoButton onClick={handleChangeSave} label="SAVE" />
+          <TodoButton onClick={()=>setEditItem("")} label="CANCEL" />
         </div>
+        {error && (<p className="error">{error}</p>)}
     </>
   );
 }

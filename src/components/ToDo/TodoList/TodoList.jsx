@@ -25,9 +25,7 @@ const handleCompleteToggle=(id)=>{
   //setTodoList(newList)
 
   }
-const editTodoItem = (id) => {
-    setEditItem(todoList.filter((data) => data.id === id));
-  };
+
   console.log("..edititem", editItem);
 
   const deleteTodoItem = (id) => {
@@ -48,7 +46,14 @@ const editTodoItem = (id) => {
             </li>
             <button
               style={{ paddingRight: "40px"}}
-              onClick={() => editTodoItem(item.id)}
+              onClick={() =>
+                  setEditItem({
+                    ...editItem,
+                    id: item.id,
+                    title: item.title,
+                    completed:item.completed
+                  })
+              }
             >
               <FaPen />
             </button>
@@ -59,7 +64,7 @@ const editTodoItem = (id) => {
         ))}
       </ul>
       </div>
-      {editItem.length > 0 && (
+      {editItem && (
         <div>
           <TodoEdit todoList={todoList} setTodoList={setTodoList} editItem={editItem} setEditItem={setEditItem}/>
         </div>
