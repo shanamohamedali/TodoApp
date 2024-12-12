@@ -26,12 +26,14 @@ const handleCompleteToggle=(id)=>{
 
   }
 
-  console.log("..edititem", editItem);
-
+  
   const deleteTodoItem = (id) => {
     console.log("id...", id);
     setTodoList(todoList.filter((data) => data.id !== id));
   };
+
+  console.log("..edititem", editItem);
+
   return (
   <div>
     <div className="todo-list-containter">

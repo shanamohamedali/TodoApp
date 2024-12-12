@@ -19,15 +19,16 @@ export function TodoEdit({ todoList,setTodoList,editItem, setEditItem }) {
   const handleChangeSave=(e)=>{
     e.preventDefault();
     if(editItem.title !== ""){
-      setTodoList(todoList.map((item)=>{
-        if(item.id===editItem.id){
-          return{
-            ...item,
-            title:editItem.title
-          }
-          return item
+      const editedTodo=todoList.map((item)=>{
+        if(item.id===editItem.id)
+        return{
+          ...item,
+          title:editItem.title
         }
-      }))
+        return item
+      })
+      //console.log("...",editedTodo)
+      setTodoList(editedTodo)
       setEditItem("")
      
     }else{
