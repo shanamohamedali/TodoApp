@@ -10,6 +10,10 @@ body{
     align-items: center;
     min-height: 100vh;
    background-color:#152431;
+   background-blend-mode: multiply;
+  background-image:
+    linear-gradient(to left, #152431, #FFFFFF33, #152431),
+    linear-gradient(to top, #152431, #FFFFFF33, #152431);
     color: white;
 }
 #root{
