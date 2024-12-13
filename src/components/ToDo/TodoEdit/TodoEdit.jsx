@@ -42,7 +42,7 @@ export function TodoEdit({ todoList,setTodoList,editItem, setEditItem }) {
           <TodoInput
             onChange={handleChange}
             value={editItem.title}
-            name="edit-input"
+            name="editInput"
             type="text"
             placeholder="Edit Todo Item.."
         

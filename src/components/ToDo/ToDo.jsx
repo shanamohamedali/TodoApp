@@ -47,7 +47,7 @@ export function ToDo() {
         <TodoInput
           onChange={handleChange}
           value={todoItem}
-          name="add-Input"
+          name="addInput"
           type="text"
           placeholder="Add Todo Item.."
           onKeyDown={(e) => {
