@@ -1,17 +1,18 @@
 .todo-list-containter {
   display: flex;
   position: relative;
-  width: 100%;
+  width: 524px;
+  max-width: 100%;
   margin-left: 10px;
   margin-right: 10px;
   box-sizing: border-box;
+  border-bottom: 1px dashed #8FA8C14D;
 }
 .todo-list-containter .todo-item{
   display: flex;
   justify-items: center;
   align-items: center;
-  width:524px;
-  border-bottom: 1px dashed #8FA8C14D;
+  max-width: 100%;
   Line-height:18.75px;
   font-weight:500;
   font-size:16px;
@@ -25,8 +26,7 @@
   width: 100%;
   word-break: break-all;
   padding-right: 50px;
- 
-
+  max-width: 100%;
 }
 .todo-list-containter button {
  justify-content: center;
