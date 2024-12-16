@@ -35,8 +35,8 @@ const handleCompleteToggle=(id)=>{
   console.log("..edititem", editItem);
 
   return (
-  <div>
-    <div className="todo-list-containter">
+  <div className="todo-list-containter">
+    <div>
       <ul>
         {todoList.map((item,index) => (
           <div className="todo-item" key={item.id}>
@@ -47,7 +47,7 @@ const handleCompleteToggle=(id)=>{
               
             </li>
             <button
-              style={{ paddingRight: "40px"}}
+              // style={{ paddingRight: "40px"}}
               onClick={() =>
                   setEditItem({
                     ...editItem,

@@ -44,6 +44,7 @@ export function ToDo() {
     <div className="todo-main-container">
       <h2 className="heading">Todo List</h2>
       <div className="todo-input-section">
+     
         <TodoInput
           onChange={handleChange}
           value={todoItem}
@@ -55,10 +56,11 @@ export function ToDo() {
           }}
         />
         <TodoButton onClick={addTodoItem} label="ADD TODO" />
+       
       </div>
       {error && (<p className="error">{error}</p>)}
       {todoList.length > 0 && (
-        <div className="todo-input-section">
+         <div className="todo-list-section">
           <TodoList todoList={todoList} setTodoList={setTodoList} />
         </div>
       )}

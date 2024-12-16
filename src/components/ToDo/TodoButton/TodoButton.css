@@ -1,6 +1,7 @@
 .todo-button-container{
-    width: 30%;
     margin-left: 5px;
+    width: 30%;
+   
 }
 .todo-button-container button{
     background-color:#0C5488;

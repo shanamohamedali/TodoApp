@@ -5,8 +5,8 @@
   margin: 10px;
   background-color: #152431;
   height: 639px;
-  width: 524px;
-  max-width: 100%;
+  max-width: 524px;
+  width: 100%;
   border: 1px #8FA8C11A;
   box-shadow:15px 10px #0000004D;
   
@@ -22,10 +22,21 @@
 .todo-main-container .todo-input-section  {
   display: flex;
   justify-content: center;
-  padding: 25px;
+  padding:  25px;
+ 
   margin-left: 10px;
   margin-right: 10px;
- width: 100%;
+  max-width: 524px;
+  width :100%;
 }
-
+.todo-main-container .todo-list-section  {
+  display: flex;
+  justify-content: center;
+  padding-top:  25px;
+  padding-bottom: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+  max-width: 524px;
+  width :100%;
+}
 
